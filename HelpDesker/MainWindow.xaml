@@ -1,0 +1,88 @@
+﻿<apb:AppBarWindow x:Class="HelpDesker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpDesker"
+        xmlns:apb="clr-namespace:WpfAppBar;assembly=WpfAppBar"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" DockedWidthOrHeight="200" MinWidth="100" MinHeight="100">
+
+    <DockPanel>
+        <Thumb Background="Gray" x:Name="rzThumb" DragCompleted="rzThumb_DragCompleted">
+            <Thumb.Style>
+                <Style TargetType="{x:Type Thumb}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=DockMode}" Value="Left">
+                            <Setter Property="Width" Value="5" />
+                            <Setter Property="DockPanel.Dock" Value="Right" />
+                            <Setter Property="Cursor" Value="SizeWE" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=DockMode}" Value="Right">
+                            <Setter Property="Width" Value="5" />
+                            <Setter Property="DockPanel.Dock" Value="Left" />
+                            <Setter Property="Cursor" Value="SizeWE" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=DockMode}" Value="Top">
+                            <Setter Property="Height" Value="5" />
+                            <Setter Property="DockPanel.Dock" Value="Bottom" />
+                            <Setter Property="Cursor" Value="SizeNS" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=DockMode}" Value="Bottom">
+                            <Setter Property="Height" Value="5" />
+                            <Setter Property="DockPanel.Dock" Value="Top" />
+                            <Setter Property="Cursor" Value="SizeNS" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Thumb.Style>
+        </Thumb>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="61*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btClose" Click="btClose_Click"
+                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                HorizontalAlignment="Left"
+                ToolTip="MaterialDesignFloatingActionMiniButton" VerticalAlignment="Top" Margin="2,2,0,0" Width="25" Height="25">
+                <materialDesign:PackIcon
+                Kind="CloseThick"
+                Height="24"
+                Width="24" />
+            </Button>
+
+            <ComboBox x:Name="cbMonitor" SelectedItem="{Binding Path=Monitor, Mode=TwoWay}" VerticalAlignment="Top" Margin="7,29,0,0" HorizontalAlignment="Left" Width="116"/>
+            <ComboBox x:Name="cbEdge" SelectedItem="{Binding Path=DockMode, Mode=TwoWay}" Margin="7,56,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116" Grid.RowSpan="2"/>
+            <Button x:Name="Reboot" Click="Reboot_OnClick"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Left" Margin="7,0,0,38" VerticalAlignment="Bottom" Grid.Row="1">Reboot</Button>
+            <Button x:Name="TurnOff" Click="TurnOff_OnClick" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Left" Margin="7,0,0,3" Content="Turn Off" VerticalAlignment="Bottom" Grid.Row="1"/>
+            <Slider
+                x:Name="Volume"
+                TickFrequency="5"
+                TickPlacement="BottomRight"
+                Orientation="Vertical"
+                Minimum="1"
+                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="141" Width="32" Margin="22,0,0,143" Grid.Row="1" />
+            <Slider
+                x:Name="Brightness"
+                TickFrequency="5"
+                TickPlacement="BottomRight"
+                Orientation="Vertical"
+                Minimum="1"
+                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="140" Width="32" Margin="49,0,0,143" Grid.Row="1" />
+
+        </Grid>
+    </DockPanel>
+</apb:AppBarWindow>

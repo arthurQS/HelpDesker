@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppBarDemo", "WpfAppBarDemo\WpfAppBarDemo.csproj", "{23DF82A9-C329-43E7-AE2A-2FC1169484E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesker", "HelpDesker\HelpDesker.csproj", "{23DF82A9-C329-43E7-AE2A-2FC1169484E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppBar", "WpfAppBar\WpfAppBar.csproj", "{8B5A8580-4D07-432C-AB38-26944DB99BC4}"
 EndProject
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8CBA2A7-45D3-4717-AB48-CC7A4A48E02B}
 	EndGlobalSection
 EndGlobal

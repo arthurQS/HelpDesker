@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAppBar;
 
-namespace WpfAppBarDemo
+namespace HelpDesker
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -62,6 +63,17 @@ namespace WpfAppBarDemo
             }
 
             this.DockedWidthOrHeight += (int)(delta / VisualTreeHelper.GetDpi(this).PixelsPerDip);
+
         }
+        private void Reboot_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("shutdown", "/r /t 0");
+        }
+        private void TurnOff_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("shutdown", "/s /t 0");
+        }
+        
     }
 }
+

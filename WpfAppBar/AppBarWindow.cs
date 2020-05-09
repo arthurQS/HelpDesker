@@ -18,6 +18,8 @@ namespace WpfAppBar
         private bool IsAppBarRegistered;
         private bool IsInAppBarResize;
 
+            
+
         static AppBarWindow()
         {
             ShowInTaskbarProperty.OverrideMetadata(typeof(AppBarWindow), new FrameworkPropertyMetadata(false));
