@@ -23,7 +23,7 @@ namespace HelpDesker
     /// </summary>
     public partial class MainWindow
     {
-        public MainWindow()
+         public MainWindow()
         {
             InitializeComponent();
 
@@ -35,6 +35,7 @@ namespace HelpDesker
                 AppBarDockMode.Bottom
             };
             this.cbMonitor.ItemsSource = MonitorInfo.GetAllMonitors();
+
         }
 
         private void btClose_Click(object sender, RoutedEventArgs e)
@@ -73,7 +74,17 @@ namespace HelpDesker
         {
             Process.Start("shutdown", "/s /t 0");
         }
-        
+        public void Volume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        public void Brightness_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+       
     }
 }
+
 

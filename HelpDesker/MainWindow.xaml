@@ -11,13 +11,13 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="#FFFB4646"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Title="MainWindow" DockedWidthOrHeight="200" MinWidth="100" MinHeight="100">
+        Title="MainWindow" DockedWidthOrHeight="200" MinWidth="100" MinHeight="100" BorderBrush="#FFFF5656" BorderThickness="2">
 
     <DockPanel>
-        <Thumb Background="Gray" x:Name="rzThumb" DragCompleted="rzThumb_DragCompleted">
+        <Thumb Background="Gray" x:Name="rzThumb" DragCompleted="rzThumb_DragCompleted" Opacity="0">
             <Thumb.Style>
                 <Style TargetType="{x:Type Thumb}">
                     <Style.Triggers>
@@ -57,7 +57,7 @@
             <Button x:Name="btClose" Click="btClose_Click"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 HorizontalAlignment="Left"
-                ToolTip="MaterialDesignFloatingActionMiniButton" VerticalAlignment="Top" Margin="2,2,0,0" Width="25" Height="25">
+                ToolTip="Close" VerticalAlignment="Top" Margin="2,2,0,0" Width="25" Height="25">
                 <materialDesign:PackIcon
                 Kind="CloseThick"
                 Height="24"
@@ -66,22 +66,22 @@
 
             <ComboBox x:Name="cbMonitor" SelectedItem="{Binding Path=Monitor, Mode=TwoWay}" VerticalAlignment="Top" Margin="7,29,0,0" HorizontalAlignment="Left" Width="116"/>
             <ComboBox x:Name="cbEdge" SelectedItem="{Binding Path=DockMode, Mode=TwoWay}" Margin="7,56,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116" Grid.RowSpan="2"/>
-            <Button x:Name="Reboot" Click="Reboot_OnClick"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Left" Margin="7,0,0,38" VerticalAlignment="Bottom" Grid.Row="1">Reboot</Button>
-            <Button x:Name="TurnOff" Click="TurnOff_OnClick" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Left" Margin="7,0,0,3" Content="Turn Off" VerticalAlignment="Bottom" Grid.Row="1"/>
+            <Button x:Name="Reboot" Click="Reboot_OnClick"   Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Are you sure ?" HorizontalAlignment="Left" Margin="7,0,0,38" VerticalAlignment="Bottom" Grid.Row="1">Reboot</Button>
+            <Button x:Name="TurnOff" Click="TurnOff_OnClick" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="79" ToolTip="Are you sure ?" HorizontalAlignment="Left" Margin="7,0,0,3" Content="Turn Off" VerticalAlignment="Bottom" Grid.Row="1"/>
             <Slider
                 x:Name="Volume"
                 TickFrequency="5"
                 TickPlacement="BottomRight"
                 Orientation="Vertical"
                 Minimum="1"
-                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="141" Width="32" Margin="22,0,0,143" Grid.Row="1" />
+                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="141" Width="32" Margin="22,0,0,143" Grid.Row="1" ValueChanged="Volume_ValueChanged" />
             <Slider
                 x:Name="Brightness"
                 TickFrequency="5"
                 TickPlacement="BottomRight"
                 Orientation="Vertical"
                 Minimum="1"
-                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="140" Width="32" Margin="49,0,0,143" Grid.Row="1" />
+                Maximum="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="140" Width="32" Margin="49,0,0,143" Grid.Row="1" ValueChanged="Brightness_ValueChanged" />
 
         </Grid>
     </DockPanel>

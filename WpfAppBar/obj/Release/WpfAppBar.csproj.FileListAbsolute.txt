@@ -1,0 +1,6 @@
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\bin\Release\WpfAppBar.dll
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\bin\Release\WpfAppBar.pdb
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\obj\Release\WpfAppBar.csprojAssemblyReference.cache
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\obj\Release\WpfAppBar.csproj.CoreCompileInputs.cache
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\obj\Release\WpfAppBar.dll
+C:\Users\Arthur\source\repos\HelpDesker\WpfAppBar\obj\Release\WpfAppBar.pdb
